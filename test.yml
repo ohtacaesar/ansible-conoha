@@ -1,0 +1,9 @@
+- hosts: localhost
+  tasks:
+    - name: get token
+      conoha_token:
+        username: "{{ lookup('env', 'USERNAME') }}"
+        password: "{{ lookup('env', 'PASSWORD') }}"
+      register: token
+    - name: dump test output
+      debug: var=token
