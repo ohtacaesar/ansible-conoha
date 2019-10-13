@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: ./
+    volumes:
+      - ./:/root
+      - ./plugins:/usr/share/ansible/plugins/modules
+    working_dir: /root
+    env_file:
+      - .env
+
